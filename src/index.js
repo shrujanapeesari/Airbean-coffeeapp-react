@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import orderReducer from './reducers/orderReducer'; 
+import {orderReducer} from './reducers/orderReducer'; 
 
 const store = createStore(
   orderReducer,
@@ -18,5 +18,7 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
-);
+  document.getElementById('root'),
+  );
+
+  reportWebVitals()

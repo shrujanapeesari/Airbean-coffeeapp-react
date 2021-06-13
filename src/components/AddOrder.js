@@ -1,22 +1,34 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import orderActions from '../actions/orderActions';
+import { useHistory } from 'react-router-dom';
+import actions from '../actions/orderActions';
 
-function getMenu() {
+function AddOrder() {
     const [menu, setMenu] = useState('');
     const dispatch = useDispatch();
+    const history = useHistory()
+
+    function updateOrder() {
+     dispatch(actions.updateOrder(menu))  
+     console.log('sucess', menu) 
+    }
 
     function handleClick() {
-      dispatch(actions.getMenu(menu))
+        
+      dispatch(actions.addOrder(menu))
+      history.push('/order')
     }
 
     return (
-        <section className="add-todo">
-            <input className="input-field" placeholder="Skriv in en todo" 
+        <section className="add-tomenu">
+            <input className="input-field" placeholder="add your order" 
             onKeyUp={ (event) => { setMenu(event.target.value) }} />
-            <button onClick={ handleClick }>Lägg till ny todo</button>
+            <button onClick={ handleClick }>order now</button>
+            <div className="plus" onClick={() => updateOrder()}></div>
+
+
         </section>
     )
 }
 
-export default getMenu;
+export default AddOrder;

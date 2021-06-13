@@ -1,8 +1,14 @@
   
-function menuItem({ task }) {
+function menuItem({ tasks, task1, task2, task3 }) {
 
   return (
-      <li>{ task }</li>
+    <li>
+      {tasks}
+      {task1}
+      {task2}
+      {task3}
+    </li>
+     
   )
 }
 
