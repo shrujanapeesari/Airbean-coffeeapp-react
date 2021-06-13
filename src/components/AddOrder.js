@@ -1,12 +1,13 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import actions from '../actions/orderActions';
 
 function AddOrder() {
     const [menu, setMenu] = useState('');
+    const [order, setOrder] = useState('');
     const dispatch = useDispatch();
-    const history = useHistory()
+    // const history = useHistory()
 
     function updateOrder() {
      dispatch(actions.updateOrder(menu))  
@@ -14,9 +15,10 @@ function AddOrder() {
     }
 
     function handleClick() {
-        
-      dispatch(actions.addOrder(menu))
-      history.push('/order')
+        // order = useSelector((state) => { return state.order})
+
+    //   dispatch(actions.addOrder(menu))
+    //   history.push('/order')
     }
 
     return (

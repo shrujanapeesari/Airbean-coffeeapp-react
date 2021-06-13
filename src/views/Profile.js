@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import vector from '../assets/Vector.png'
 import Header from '../components/Header'
+// import { useEffect } from 'react';
 // import {useHistory} from 'react-router-dom'
 
 function Profile() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
+    const [userId, setUserId] = useState('')
+    const [data, setData] = useState('')
     
     // const history = useHistory()
 
@@ -19,19 +22,29 @@ function Profile() {
             method: 'POST'
         })
             .then((response) => response.json())
-            .then(result => {
+            .then(result => { 
+                setData(result)
+                setUserId(result.userId)
+
                 console.log('Successfully created account', result)
-                // history.push("Account created sucessfully")
+                // history.push()
             })           
 
   }
+
+//   useEffect(() => {
+//         getProfile()
+//     }, []);
+
+
+
 
     return (
         <div className="login">
             <Header />
             <img src={ vector } alt="phone logo"/>
             <div>Välkommen till AirBean-familjen!</div>
-            <span>Genom att skapa ett konto nedan kan du spara och se din orderhistorik.</span>
+            
             <div id="profile">
               
                 <input type="username" placeholder="Name" value={username} onChange={(task) => setUsername(task.target.value)}></input>
@@ -40,10 +53,14 @@ function Profile() {
                  </div>  
                  <div>
                 <input type="email" placeholder="Email" value={email} onChange={(task) => setEmail(task.target.value)}></input>
-                 </div>                             
+
+                 </div> 
+                 
+                                           
                 <button type="button" className="submit_btn" onClick={getProfile}> Login</button>
                 
                 </div>
+                <div> {data.message} </div>
         </div>
     )
 }

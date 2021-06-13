@@ -1,6 +1,8 @@
 const initState = {
     menu: [],
-    order:[]
+    order:[],
+    userId:[],
+    
 }
 
 // let id = 0
@@ -19,20 +21,13 @@ export const orderReducer = (state = initState, action) => {
       }
 
         }
-             case 'FETCH_ORDERID':
+             case 'FETCH_ORDERID':{
             return {
-                ...state,
-                order: state.order.map(order => {
-                    if (order.id !== action.payload) {
-                        return order;
-                    }
+            ...state,
+            orderid:action.payload
 
-                    return {
-                        ...order,
-                        done: !order.done
-                    }
-                })
-            }
+    }
+}
         case 'FETCH_MENU': {
 return {
     ...state,
@@ -40,17 +35,14 @@ return {
 
     }
 }
-
-   case 'UPDATE_ORDER': {
+   
+case 'SET_USERID': {
 return {
     ...state,
-    order:action.payload
+    userId:action.payload
 
     }
 }
-
-
-
 default:
 return state
 }

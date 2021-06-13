@@ -27,7 +27,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Link onClick={onRoute} className='link' to='/profile'>
-                  Min profil
+                  Login
                 </Link>
               </li>
               <li>

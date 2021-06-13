@@ -32,9 +32,7 @@ function App() {
         <h1>MENU</h1>
         <ul className="menu-list">
             { menu.map((menulist, index) => {
-              return <MenuItem tasks={menulist.id}  task1={menulist.title} task2={menulist.desc} task3={menulist.price}  key ={ index } />
-
-              
+              return <MenuItem tasks={menulist.id}  task1={menulist.title} task2={menulist.desc} task3={menulist.price}  key ={ index } />              
               
             }) }
         </ul>

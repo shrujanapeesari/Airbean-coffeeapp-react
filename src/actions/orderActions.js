@@ -11,7 +11,12 @@ const getMenu = (menu) => {
     }
 }
 
-
+const setUserId= (status) => {
+  return {
+    type: 'POST_USERID',
+    payload: status
+  }
+}
   const addOrder = (order) => {
     return {
         type: 'POST_ORDER',
@@ -31,5 +36,5 @@ const getMenu = (menu) => {
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {getMenu, addOrder, getOrder, updateOrder}
+export default {getMenu, addOrder, getOrder, updateOrder, setUserId}
 

@@ -4,9 +4,11 @@ import About from './views/About'
 import Menu from './views/Menu'
 import Status from './views/Status'
 import Profile from './views/Profile'
-import LandingPage from './views/LandingPage';
+// import LandingPage from './views/LandingPage';
 import Order from './views/Order'
 import NavBar from './components/NavBar';
+// import Profile from './views/Profile';
+// import Login from './views/Login'
 
 
 
@@ -16,7 +18,7 @@ function App() {
 <div className="App">
       <BrowserRouter>
       <Switch>
-        <Route path="/ LandingPage" component={ LandingPage } exact/>
+        
         <Route path="/About" component={ About } />
         <Route path="/" component={ NavBar } exact/>
         <Route path="/Menu" component={ Menu } />

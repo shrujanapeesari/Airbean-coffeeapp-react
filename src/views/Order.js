@@ -8,17 +8,35 @@ import actions from '../actions/orderActions';
 // import { useState } from 'react';
 // import '../styles/global.scss'
 
-function Status () {
+function OrderStatus () {
   const order = useSelector((state) => { return state.order})
+  const userId=useSelector((state) => { return state.userId})
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    async function getOrder() {
-      const response = await fetch('http://localhost:8000/api/order/:id')
-      const data = await response.json()
-      console.log('getOrder', data)
-      dispatch(actions.getOrder(data.order))
+  async function getOrder() {
+       let url=`http://localhost:8000/api/order/${userId}`
+      //  let url = 'localhost/order' + userId
+       console.log('userId', userId)
+      const response = await fetch(url)
+      .then(result => {
+                  console.log('Thank you for your order. Enjoy our coffee', result)
+                // history.push("/")
+            })           
+
+                // setData(result)                
+                
+                // history.push("/")
+                     
+
+      // const data = await response.json()
+
+     
+      // dispatch(actions.getOrder(data.order))
     }
+
+  useEffect(() => {
+   
+    
         getOrder()
   }, [dispatch])
 
@@ -45,7 +63,7 @@ function Status () {
   );
 }
 
-export default Status;
+export default OrderStatus;
 
 
    
