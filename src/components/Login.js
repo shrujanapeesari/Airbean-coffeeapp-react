@@ -1,22 +1,21 @@
 import { useState } from 'react';
 import vector from '../assets/Vector.png'
-import Header from '../components/Header'
+import Header from './Header'
 // import NavBar from '../components/NavBar';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 // import {useHistory} from 'react-router-dom'
 
-function Profile() {
+function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
-    const [userId, setUserId] = useState('')
+    
     const [data, setData] = useState('')
     
     // const history = useHistory()
 
-    function getProfile() {
-        fetch('http://localhost:8000/api/account', {
-            body: JSON.stringify({ username: username, password: password, email: email}),
+    function getLogin() {
+        fetch('http://localhost:8000/api/login', {
+            body: JSON.stringify({ username: username, password: password}),
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -25,7 +24,7 @@ function Profile() {
             .then((response) => response.json())
             .then(result => { 
                 setData(result)
-                setUserId(result.userId)
+                
 
                 console.log('Successfully created account', result)
                 // history.push()
@@ -33,9 +32,9 @@ function Profile() {
 
   }
 
-//   useEffect(() => {
-//         getProfile()
-//     }, []);
+  useEffect(() => {
+        getLogin()
+    }, []);
 
 
 
@@ -55,12 +54,12 @@ function Profile() {
                 <input type="password" placeholder="Password" value={password} onChange={(task) => setPassword(task.target.value)}></input>
                  </div>  
                  <div>
-                <input type="email" placeholder="Email" value={email} onChange={(task) => setEmail(task.target.value)}></input>
+               
 
                  </div> 
                  
                                            
-                <button type="button" className="submit_btn" onClick={getProfile}> Login</button>
+                <button type="button" className="submit_btn" onClick={getLogin}> Login</button>
                 
                 </div>
                 <div> {data.message} </div>
@@ -68,4 +67,4 @@ function Profile() {
     )
 }
 
-export default Profile
+export default Login
