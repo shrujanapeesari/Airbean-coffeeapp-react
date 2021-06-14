@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    
     const [data, setData] = useState('')
     
     // const history = useHistory()
@@ -26,8 +25,7 @@ function Login() {
                 setData(result)
                 
 
-                console.log('Successfully created account', result)
-                // history.push()
+               
             })           
 
   }
@@ -54,11 +52,8 @@ function Login() {
                 <input type="password" placeholder="Password" value={password} onChange={(task) => setPassword(task.target.value)}></input>
                  </div>  
                  <div>
-               
-
                  </div> 
-                 
-                                           
+                                                         
                 <button type="button" className="submit_btn" onClick={getLogin}> Login</button>
                 
                 </div>

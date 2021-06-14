@@ -2,8 +2,9 @@
 import {  useDispatch ,useSelector} from 'react-redux';
 import { useEffect } from 'react';
 // import OrderItem from '../components/OrderItem';
-import {userId} from '../actions/orderActions';
+// import {userId} from '../actions/orderActions';
 import { useState } from 'react';
+import drone from '../assets/drone.svg'
 
 function Orderid() {
   // const order = useState('')
@@ -39,7 +40,9 @@ const userId = useSelector((state) => { return state.userId})
 
     return (
         <div>
-           {data.ETA}
+          <img src={ drone } alt="drone logo"/>
+           <div>Your order is on the way.</div>
+           <div> It will reach you in {data.ETA} </div>
            </div>
     )
 }

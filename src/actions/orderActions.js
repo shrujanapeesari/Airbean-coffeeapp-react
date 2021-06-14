@@ -12,6 +12,7 @@ const getMenu = (menu) => {
 }
 
 const setUserId= (status) => {
+  console.log('status=', status);
   return {
     type: 'POST_USERID',
     payload: status
@@ -30,11 +31,17 @@ const setUserId= (status) => {
         payload: orderid
     }
 }
+const setSelection = (selection) => {
+    return {
+        type: 'POST_SELECTION',
+        payload: selection 
+    }
+}
 
 
 
 
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default {getMenu, addOrder, getOrder, updateOrder, setUserId}
+export default {getMenu, addOrder, getOrder, updateOrder, setUserId, setSelection}
 
