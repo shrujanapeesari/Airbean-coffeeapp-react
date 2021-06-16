@@ -1,8 +1,11 @@
+import footer from '../assets/footer.png'
+
+
 function Footer (){
-    return (
-  
+    return (  
  <div id = "footer">
-You can reach us at coffeeshop@gmail.com
+ <img src={ footer } alt="graphics logo"/>
+ 
   </div>
   )
 } 

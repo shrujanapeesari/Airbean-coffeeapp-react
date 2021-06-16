@@ -1,0 +1,51 @@
+body {
+  font-family: Arcade;
+}
+
+#OrderStatus {
+  background-color: #e5674e;
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.orderNumber {
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#orderRoute {
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#delivery {
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#okclick {
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: large;
+}
+
+#image1 {
+  color: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#orderhistory {
+  background-color: #2f2926;
+}
+
+.orderapp {
+  color: white;
+}

@@ -1,6 +1,4 @@
-  
 function menuItem({ tasks, task1, task2, task3 }) {
-
   return (
     <li>
       {tasks}
@@ -8,8 +6,7 @@ function menuItem({ tasks, task1, task2, task3 }) {
       {task2}
       {task3}
     </li>
-     
-  )
+  );
 }
 
 export default menuItem;
