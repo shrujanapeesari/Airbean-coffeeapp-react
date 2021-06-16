@@ -28,9 +28,7 @@ function AddOrder() {
 //     }
     
     function checkout() {
-        // post userId + order information to order API endpoint
-        // console.log('order=', order);
-        // console.log('userId=', userId);
+        // post userId + order information to order API endpoint        
          history.push('/Cart');
     }
 
