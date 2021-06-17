@@ -1,80 +1,46 @@
-.orderTitle {
+.totalcart {
+  margin-top: 100px;
+  font-size: 23px;
+  text-align: left;
+}
+
+.orderink {
+  font-size: 16px;
+}
+.checkoutnow {
+  background-color: #2f2926;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  padding: 12px 50px;
+  margin-top: 4em;
+
   font-size: 20px;
-}
-
-.orderContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: left;
-  -ms-flex-pack: left;
-  justify-content: left;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.totalAmount {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: left;
-  -ms-flex-pack: left;
-  justify-content: left;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  width: 100%;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  justify-self: flex-end;
-  margin-top: auto;
-}
-
-.totalTitle {
-  margin-right: 70%;
-}
-
-.totalTitle,
-.orderTotal {
-  margin-bottom: 0;
-}
-
-.orderInclude {
-  margin-top: 0;
-}
-
-.payNow {
-  background: #2f2926;
-  color: #ffffff;
-  font-size: 24px;
-  margin-top: auto;
-  margin-bottom: 20px;
-  width: 250px;
-  height: 55px;
-  border: 0;
-  border-radius: 50px;
-}
-
-.payNow:hover {
+  white-space: nowrap;
   cursor: pointer;
-  background-color: #e5674e;
+  padding-right: 4em;
+  padding-left: 3em;
 }
 
-.navMenu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: 10px;
-  margin-top: 10px;
-  width: 375px;
-  height: 600px;
-  display: flex;
-  background: #2f2926;
-  position: absolute;
+.carttitle {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.title {
+  text-align: left;
+  margin-top: 2em;
+}
+
+.price {
+  text-align: left;
+}
+
+.count {
+  text-align: right;
+  padding-left: 1em;
+}
+
+.totalamount {
+  text-align: left;
 }

@@ -8,9 +8,9 @@ import "../styles/profile.css";
 function Profile() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-//    const [Id, setId] = useState("");
+  //    const [Id, setId] = useState("");
   const [data, setData] = useState("");
- 
+
   function getProfile() {
     fetch("http://localhost:8000/api/account", {
       body: JSON.stringify({ username: username, password: password }),
@@ -25,8 +25,7 @@ function Profile() {
         // setUserId(result.userId)
 
         console.log("WORKS", result);
-        
-        
+
         if (result.success) {
           setData({ message: "Sucessfully created account" });
         } else {

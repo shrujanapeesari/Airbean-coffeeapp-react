@@ -1,9 +1,8 @@
-function orderItem({ order1, order2, order3 }) {
+function orderItem({ order1, order2 }) {
   return (
-    <div className="grid-container">
-      <span id="orderitem1">{order1}</span>
-      <span id="orderitem2">{order2}</span>
-      <span id="orderitem3">{order3}</span>
+    <div>
+      <li className="order1-list"> OrderNumber: {order1} </li>
+      <li className="order2-list">OrderTime: {order2}</li>
     </div>
   );
 }

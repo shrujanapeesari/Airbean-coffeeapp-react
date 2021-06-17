@@ -1,20 +1,22 @@
-body {
-  font-family: "PT Serif", serif;
-}
-
 #about {
   background-color: #f3e4e1;
   color: #2f2926;
 }
 
 #title-about {
-  font-size: 42px;
-  font-weight: 700;
-  text-align: left;
+  font-size: 30px;
+
+  text-align: center;
   padding-left: 30px;
+  margin-top: 1em;
 }
 
 section {
   padding: 0px 30px 0px 30px;
   text-align: left;
+  margin-top: 2em;
+}
+
+#ownergirl {
+  margin-top: 5em;
 }

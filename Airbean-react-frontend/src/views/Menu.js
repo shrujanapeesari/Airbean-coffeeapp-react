@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import MenuItem from "../components/MenuItem";
 import actions from "../actions/orderActions";
-import AddOrder from "../components/AddOrder";
+// import AddOrder from "../components/AddOrder";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import Cart from '../components/Cart';
@@ -21,7 +21,7 @@ function Menu() {
     return state.order;
   });
   const [order, setOrder] = useState("");
-  const [cart, setCart ]= useState("");
+  const [cart, setCart] = useState("");
   const [selection, setSelection] = useState("");
   const dispatch = useDispatch();
 
@@ -31,8 +31,8 @@ function Menu() {
       const response = await fetch("http://localhost:8000/api/coffee");
       const data = await response.json();
       // This is to extract each menu item id and their price, title and desc
-        // This makes it easier to reference total calculation and the cart display easy
-        // The final format will be {id => {price, title, desc}}
+      // This makes it easier to reference total calculation and the cart display easy
+      // The final format will be {id => {price, title, desc}}
       console.log("getMenu", data);
       dispatch(actions.getMenu(data));
     }
@@ -46,41 +46,44 @@ function Menu() {
   }
 
   function addToOrder(id) {
-   
     currentOrder.push(id);
     setOrder(currentOrder);
   }
 
   function renderCart() {
     let menuItemsMap = {};
-    // read order array - this is currentOrder 
+    // read order array - this is currentOrder
     // read menuItemsMap  - this is menuItems
     // extract totals and price total from menu items map and order array
     // calculate running total
-    menu.forEach((item) => { 
-        let menuItem = {"price": item.price, "desc": item.desc, "title": item.title}
-        console.log(menuItem)
-        menuItemsMap[item.id] = menuItem
-    })
+    menu.forEach((item) => {
+      let menuItem = { price: item.price, desc: item.desc, title: item.title };
+      console.log(menuItem);
+      menuItemsMap[item.id] = menuItem;
+    });
     let cart = {};
     cart["total"] = 0;
     cart["items"] = [];
     let i;
-    for(i=0; i<order.length; i++) {
-        let selection = order[i]
-        if(cart["items"][selection]) {
-          cart["items"][selection]["count"]++;
-        } else {
-          cart["items"][selection] = {"price": menuItemsMap[selection].price, "desc": menuItemsMap[selection].desc, "title": menuItemsMap[selection].title, "count": 1}
-        }
-        cart["total"] += menuItemsMap[selection].price;
+    for (i = 0; i < order.length; i++) {
+      let selection = order[i];
+      if (cart["items"][selection]) {
+        cart["items"][selection]["count"]++;
+      } else {
+        cart["items"][selection] = {
+          price: menuItemsMap[selection].price,
+          desc: menuItemsMap[selection].desc,
+          title: menuItemsMap[selection].title,
+          count: 1,
+        };
+      }
+      cart["total"] += menuItemsMap[selection].price;
     }
     // setCart(cart)
     console.log("cart: " + JSON.stringify(cart));
     console.log("ordertotal: " + cart["total"]);
     dispatch(actions.setCart(cart));
   }
-
 
   return (
     <section className="menu-app">
@@ -92,12 +95,12 @@ function Menu() {
         </Link>
 
         <Link id="" to="/Cart">
-          <img id="bag" src={bag} alt="add to cart" /></Link>
-       
+          <img id="bag1" src={bag} alt="add to cart" />
+        </Link>
 
-        <h1 id="menutag">MENY</h1>
+        <h1 id="menutag">Meny</h1>
 
-        <ul>
+        <ul id="menumapping">
           {menu.map((menulist, index) => {
             return (
               <MenuItem
@@ -120,7 +123,6 @@ function Menu() {
         </ul>
       </article>
       {renderCart()}
-     
       <Footer />
     </section>
   );

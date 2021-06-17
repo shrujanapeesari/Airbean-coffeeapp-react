@@ -1,10 +1,10 @@
 function cartItem({ item, item1, item2 }) {
   return (
-    <li>
-      <div>{item}</div>
-      {item1}
-      {item2}
-    </li>
+    <div className="totalamount">
+      <li className="title">{item}.................................</li>
+      <li className="count">{item2}</li>
+      <li className="price">{item1} kr</li>
+    </div>
   );
 }
 

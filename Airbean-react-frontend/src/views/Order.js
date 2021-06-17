@@ -7,15 +7,13 @@ import { useHistory } from "react-router-dom";
 
 function Orderid() {
   const [data, setData] = useState("");
-  const history = useHistory()
+  const history = useHistory();
   const userId = useSelector((state) => {
     return state.userId;
   });
 
   function onClick() {
-    
-
-    history.push("/Status")
+    history.push("/Status");
   }
 
   function Status() {
@@ -31,12 +29,12 @@ function Orderid() {
       .then((result) => {
         setData(result);
         console.log("works", result);
-        
       });
   }
 
   useEffect(() => {
     Status();
+    // eslint-disable-next-line
   }, []);
 
   return (
