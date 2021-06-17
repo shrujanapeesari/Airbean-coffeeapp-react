@@ -69,16 +69,16 @@ function OrderStatus () {
         <div>shrujana.peesari@iths.se</div>
         
          
-        <ul className="statusmenu">
+        <div className="statusmenu">
           
 
             { orderResponse && orderResponse.map((orderlist, index) => {            
-              return <OrderItem id ="statusitem"  order1={orderlist.ETA}
-               order2={ orderlist.orderNumber}
-               order3={ orderlist.price} kr key={ index } />            
+              return <OrderItem id ="statusitem"  
+               order1={ orderlist.orderNumber}
+               order2={ orderlist.price} kr key={ index } />            
               
             }) }
-        </ul>
+        </div>
        
       </article>
      

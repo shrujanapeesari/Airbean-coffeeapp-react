@@ -31,8 +31,9 @@ const setSelection = (selection) => {
 };
 
 const setCart = (menu) => {
+  console.log("menu=", menu);
   return {
-    type: "POST_CART",
+    type: "SET_CART",
     payload: menu,
   };
 };

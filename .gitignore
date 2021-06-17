@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+Airbean-database-backend/node_modules
+Airbean-react-frontend/node_modules
+
 /.pnp
 .pnp.js
 

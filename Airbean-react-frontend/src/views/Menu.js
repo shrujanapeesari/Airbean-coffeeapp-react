@@ -46,7 +46,7 @@ function Menu() {
   }
 
   function addToOrder(id) {
-    console.log("currentOrder=", currentOrder);
+   
     currentOrder.push(id);
     setOrder(currentOrder);
   }
@@ -65,7 +65,7 @@ function Menu() {
     let cart = {};
     cart["total"] = 0;
     cart["items"] = [];
-    var i;
+    let i;
     for(i=0; i<order.length; i++) {
         let selection = order[i]
         if(cart["items"][selection]) {
@@ -75,8 +75,10 @@ function Menu() {
         }
         cart["total"] += menuItemsMap[selection].price;
     }
+    // setCart(cart)
     console.log("cart: " + JSON.stringify(cart));
     console.log("ordertotal: " + cart["total"]);
+    dispatch(actions.setCart(cart));
   }
 
 
@@ -93,9 +95,9 @@ function Menu() {
           <img id="bag" src={bag} alt="add to cart" /></Link>
        
 
-        <h1>MENU</h1>
+        <h1 id="menutag">MENY</h1>
 
-        <ul className="menulist">
+        <ul>
           {menu.map((menulist, index) => {
             return (
               <MenuItem
@@ -118,7 +120,7 @@ function Menu() {
         </ul>
       </article>
       {renderCart()}
-      <AddOrder />
+     
       <Footer />
     </section>
   );

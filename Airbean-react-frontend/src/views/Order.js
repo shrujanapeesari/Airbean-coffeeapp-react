@@ -3,14 +3,20 @@ import { useEffect } from "react";
 import { useState } from "react";
 import drone from "../assets/drone.svg";
 import "../styles/order.css";
+import { useHistory } from "react-router-dom";
 
 function Orderid() {
   const [data, setData] = useState("");
+  const history = useHistory()
   const userId = useSelector((state) => {
     return state.userId;
   });
 
-  function onClick() {}
+  function onClick() {
+    
+
+    history.push("/Status")
+  }
 
   function Status() {
     console.log("userId", userId);
@@ -25,7 +31,7 @@ function Orderid() {
       .then((result) => {
         setData(result);
         console.log("works", result);
-        // history.push("/")
+        
       });
   }
 

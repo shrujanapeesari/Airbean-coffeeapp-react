@@ -1,0 +1,30 @@
+body {
+  font-family: Arcade;
+}
+
+#statushistory {
+  background-color: #2f2926;
+  color: white;
+}
+
+.statusorder {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#statusnavicon {
+  float: left;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+
+  padding: 10px;
+}
+
+.grid-container > div {
+  text-align: center;
+  font-size: 30px;
+}

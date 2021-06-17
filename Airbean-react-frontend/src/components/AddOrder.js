@@ -2,7 +2,8 @@ import {  useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 // import actions from '../actions/orderActions';
-// import add from '../assets/add.png'
+import add from '../assets/add.png'
+import { Link } from "react-router-dom";
 // import {useHistory} from 'react-router-dom'
 
 function AddOrder() {
@@ -32,13 +33,7 @@ function AddOrder() {
          history.push('/Cart');
     }
 
-    return (
-        <section className="addtomenu">
-         <div>         
-            <button onClick={ checkout }>Checkout</button>
-        </div>
-        </section>
-    )
+   
 }
 
 export default AddOrder;

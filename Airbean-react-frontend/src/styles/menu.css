@@ -37,3 +37,15 @@
   font-size: 20px;
   display: inline-block;
 }
+
+.pricetag h2 {
+  margin-left: 10em;
+}
+
+.menutask {
+  font-size: 12px;
+}
+#menutag {
+  text-align: center;
+  font-size: 18px;
+}
