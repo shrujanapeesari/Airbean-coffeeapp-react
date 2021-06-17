@@ -1,10 +1,14 @@
 // import {useHistory} from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import "../styles/cart.css";
+import {  useDispatch, useSelector } from 'react-redux';
 
 function PayClick() {
 //   const history = useHistory()
-// history.push("/Order") 
+// history.push("/Order")
+const cart = useSelector((state) => { return state.cart})
+
+
 function onClick() {}
   return (
     <section id ="cart">

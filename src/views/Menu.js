@@ -21,6 +21,7 @@ function Menu() {
     return state.order;
   });
   const [order, setOrder] = useState("");
+  const [cart, setCart ]= useState("");
   const [selection, setSelection] = useState("");
   const dispatch = useDispatch();
 

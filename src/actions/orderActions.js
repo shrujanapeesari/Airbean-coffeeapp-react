@@ -32,7 +32,7 @@ const setSelection = (selection) => {
 
 const setCart = (menu) => {
   return {
-    type: "POST_Cart",
+    type: "POST_CART",
     payload: menu,
   };
 };
