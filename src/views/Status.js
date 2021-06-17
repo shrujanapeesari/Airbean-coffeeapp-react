@@ -6,6 +6,7 @@ import navicon from "../assets/navicon.png";
 import OrderItem from '../components/OrderItem';
 import { Link } from "react-router-dom";
 import Profileimage from "../assets/Profileimage.svg";
+import "../styles/status.css";
 
 
 
@@ -51,25 +52,28 @@ function OrderStatus () {
   }, [dispatch])
 
   return (
-    <div id='orderhistory'>
-    <section>
-      <article className="orderapp">
-        <Header />     
-        <Link to="/Navbar">
-        <img id="navicon" src={navicon} alt="Logo" />
+    <div id='statushistory'>
+    <div>
+      <article className="statusorder">
+        <Header />
+        <div id="statusnavicon">  
+           
+        
+      </div>
+       <Link to="/Navbar">
+        <img src={navicon} alt="Logo" />
       </Link>
-       
         <h1>Order history</h1>
         <img id="profileimage" src={Profileimage} alt="Logo" />
-        <div>Sixten Kaffelöver</div>
-        <div>sixten.kaffelover@zomcom.se</div>
+        <div>Shrujana Peesari</div>
+        <div>shrujana.peesari@iths.se</div>
         
          
-        <ul className="menulist">
+        <ul className="statusmenu">
           
 
             { orderResponse && orderResponse.map((orderlist, index) => {            
-              return <OrderItem  order1={orderlist.ETA}
+              return <OrderItem id ="statusitem"  order1={orderlist.ETA}
                order2={ orderlist.orderNumber}
                order3={ orderlist.price} kr key={ index } />            
               
@@ -79,7 +83,7 @@ function OrderStatus () {
       </article>
      
       <Footer />
-       </section>
+       </div>
        </div>
   );
 }

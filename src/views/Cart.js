@@ -10,10 +10,10 @@ function onClick() {}
     <section id ="cart">
       <h1 className="Title">Din Beställning</h1>
 
-      <div className="Container1">
+      <div className="Container">
        
          
-            <section className="Container2" >
+            <section className="Container" >
               <h1 className="orderTitle">Bryggkaffe...............................1</h1>
               <p className="orderPrice">98 kr</p>
               

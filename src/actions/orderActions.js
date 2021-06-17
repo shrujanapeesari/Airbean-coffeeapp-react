@@ -30,5 +30,13 @@ const setSelection = (selection) => {
   };
 };
 
+const setCart = (menu) => {
+  return {
+    type: "POST_Cart",
+    payload: menu,
+  };
+};
+
+
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getMenu, addOrder, getOrder, setUserId, setSelection };
+export default { getMenu, addOrder, getOrder, setUserId, setSelection,setCart };

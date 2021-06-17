@@ -3,6 +3,7 @@ const initState = {
   order: [],
   userId: [],
   selection: [],
+  cart:[]
 };
 
 export const orderReducer = (state = initState, action) => {
@@ -41,6 +42,14 @@ export const orderReducer = (state = initState, action) => {
       return {
         ...state,
         selection: action.payload,
+      };
+    }
+
+
+case "SET_CART": {
+      return {
+        ...state,
+        CART: action.payload,
       };
     }
 

@@ -26,8 +26,12 @@ function Menu() {
 
   useEffect(() => {
     async function getMenu() {
+      //let menuItemsMap = new Map();
       const response = await fetch("http://localhost:8000/api/coffee");
       const data = await response.json();
+      // This is to extract each menu item id and their price, title and desc
+        // This makes it easier to reference total calculation and the cart display easy
+        // The final format will be {id => {price, title, desc}}
       console.log("getMenu", data);
       dispatch(actions.getMenu(data));
     }
@@ -40,11 +44,40 @@ function Menu() {
     setSelection(target.value);
   }
 
-  function addToOrder() {
+  function addToOrder(id) {
     console.log("currentOrder=", currentOrder);
-    currentOrder.push(selection);
+    currentOrder.push(id);
     setOrder(currentOrder);
   }
+
+  function renderCart() {
+    let menuItemsMap = {};
+    // read order array - this is currentOrder 
+    // read menuItemsMap  - this is menuItems
+    // extract totals and price total from menu items map and order array
+    // calculate running total
+    menu.forEach((item) => { 
+        let menuItem = {"price": item.price, "desc": item.desc, "title": item.title}
+        console.log(menuItem)
+        menuItemsMap[item.id] = menuItem
+    })
+    let cart = {};
+    cart["total"] = 0;
+    cart["items"] = [];
+    var i;
+    for(i=0; i<order.length; i++) {
+        let selection = order[i]
+        if(cart["items"][selection]) {
+          cart["items"][selection]["count"]++;
+        } else {
+          cart["items"][selection] = {"price": menuItemsMap[selection].price, "desc": menuItemsMap[selection].desc, "title": menuItemsMap[selection].title, "count": 1}
+        }
+        cart["total"] += menuItemsMap[selection].price;
+    }
+    console.log("cart: " + JSON.stringify(cart));
+    console.log("ordertotal: " + cart["total"]);
+  }
+
 
   return (
     <section className="menu-app">
@@ -52,12 +85,12 @@ function Menu() {
         <Header />
 
         <Link to="/Navbar">
-          <img id="navicon" src={navicon} alt="Logo" />
+          <img id="navicon1" src={navicon} alt="Logo" />
         </Link>
 
-        <Link to="/AddOrder">
-          <img id="bag" src={bag} alt="add to cart" />
-        </Link>
+        <Link id="" to="/Cart">
+          <img id="bag" src={bag} alt="add to cart" /></Link>
+       
 
         <h1>MENU</h1>
 
@@ -68,8 +101,8 @@ function Menu() {
                 tasks={
                   <img
                     role="button"
-                    onClick={addToOrder}
-                    id="add"
+                    onClick={() => addToOrder(menulist.id)}
+                    id={menulist.id}
                     src={add}
                     alt="add to product"
                   />
@@ -83,6 +116,7 @@ function Menu() {
           })}
         </ul>
       </article>
+      {renderCart()}
       <AddOrder />
       <Footer />
     </section>
